@@ -1,0 +1,13 @@
+---
+applications:
+ - name: tmfsso3
+   host: tmfsso3
+   memory: 512M
+   instances: 1
+   buildpack: https://github.com/cloudfoundry/java-buildpack
+   path: target/tmfsso3-0.0.1-SNAPSHOT.jar
+   services:
+   - tmfsso
+   env:
+     GRANT_TYPE: authorization_code
+     SKIP_SSL_VALIDATION: true
